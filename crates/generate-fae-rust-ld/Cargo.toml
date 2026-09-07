@@ -1,0 +1,17 @@
+[package]
+name = "generate-fae-rust-ld"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+publish.workspace = true
+
+[dependencies]
+fae_core = { path = "../fae-core" }
+fae_elf = { path = "../fae-elf" }
+goblin = "0.9"
+
+[[bin]]
+name = "generate_fae_rust_ld"
+path = "src/main.rs"

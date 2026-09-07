@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the snapshot
+        uses: actions/checkout@v5
+
+      - name: Install Rust components and embedded targets
+        run: |
+          rustup component add clippy rustfmt
+          rustup target add armv7a-none-eabi thumbv7em-none-eabi
+          rustup toolchain install nightly --profile minimal --component rust-src
+
+      - name: Install the ARM GNU toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes --no-install-recommends gcc-arm-none-eabi
+
+      - name: Check formatting
+        run: cargo fmt --all -- --check
+
+      - name: Run Clippy
+        run: cargo clippy --workspace --all-targets -- -D warnings
+
+      - name: Test host-side tooling
+        run: cargo test --workspace
+
+      - name: Check embedded projects
+        run: cargo embedded-check

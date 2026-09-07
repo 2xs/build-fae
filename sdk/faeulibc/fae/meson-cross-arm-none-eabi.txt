@@ -1,0 +1,21 @@
+[binaries]
+c = 'arm-none-eabi-gcc'
+cpp = 'arm-none-eabi-g++'
+ar = 'arm-none-eabi-ar'
+as = 'arm-none-eabi-as'
+ld = 'arm-none-eabi-ld'
+nm = 'arm-none-eabi-nm'
+strip = 'arm-none-eabi-strip'
+
+[host_machine]
+system = 'none'
+cpu_family = 'arm'
+cpu = 'arm'
+endian = 'little'
+
+[properties]
+skip_sanity_check = true
+needs_exe_wrapper = true
+
+[built-in options]
+c_args = [ '-nostdlib', '-mthumb', '-mcpu=cortex-m33', '-mfloat-abi=soft', '-msingle-pic-base', '-mpic-register=r9', '-mno-pic-data-is-text-relative', '-fPIC', '-ffreestanding', '-fno-common', '-Os' ]

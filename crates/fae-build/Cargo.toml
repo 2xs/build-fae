@@ -1,0 +1,15 @@
+[package]
+name = "fae_build"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+publish.workspace = true
+
+[dependencies]
+anyhow = "1.0"
+goblin = "0.9"
+fae_core = { path = "../fae-core" }
+fae_elf = { path = "../fae-elf" }
+build_gdbinit = { path = "../build-gdbinit" }

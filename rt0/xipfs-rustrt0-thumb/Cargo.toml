@@ -1,0 +1,14 @@
+[package]
+name = "xipfs-rustrt0-thumb"
+version = "0.1.0"
+edition = "2021"
+license = "GPL-3.0-only"
+authors = ["Gilles Grimaud"]
+publish = false
+
+[[bin]]
+name = "xipfs-rustrt0-thumb"
+path = "src/main.rs"
+
+[dependencies]
+rust-xipfs-lib = { path = "../../crates/rust-xipfs-lib/" }

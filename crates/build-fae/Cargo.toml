@@ -1,0 +1,15 @@
+[package]
+name = "build-fae"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+publish.workspace = true
+
+[dependencies]
+fae_build = { path = "../fae-build" }
+
+[[bin]]
+name = "build_fae"
+path = "src/main.rs"

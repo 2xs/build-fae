@@ -1,0 +1,49 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/fae-core",
+    "crates/fae-elf",
+    "crates/build-gdbinit",
+    "crates/fae-build",
+    "crates/fae-read",
+    "crates/build-fae",
+    "crates/build-fae-rust",
+    "crates/read-fae",
+    "crates/check-elf-rel",
+    "crates/generate-fae-rust-ld",
+    "crates/xiprfs-fae-tools",
+    "xtask",
+]
+exclude = [
+    "crates/rust-xipfs-lib",
+    "rt0/rustrt0-arm",
+    "rt0/rustrt0-thumb",
+    "rt0/xipfs-rustrt0-thumb",
+    "examples/minimal_rust",
+    "examples/minimal_rust_print",
+    "tests/minimal_rust_print_test",
+    "tests/relocated_cstring_repro_test",
+    "tests/relocated_slice_location_repro_test",
+    "tests/minimal_rust_print_CStrBuf_test",
+]
+default-members = [
+    "crates/xiprfs-fae-tools",
+    "crates/build-fae",
+    "crates/build-fae-rust",
+    "crates/read-fae",
+    "crates/check-elf-rel",
+    "crates/generate-fae-rust-ld",
+]
+
+[workspace.package]
+version = "0.1.0-alpha.0"
+edition = "2021"
+license = "GPL-3.0-only"
+authors = ["Gilles Grimaud", "Edouard Pierre", "Gregory Guche"]
+repository = "https://github.com/2xs/build-fae"
+publish = false
+
+[profile.dev]
+debug = true
+lto = false
+opt-level = 0

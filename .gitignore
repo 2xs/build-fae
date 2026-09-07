@@ -1,0 +1,13 @@
+/target/
+/build/
+/examples/*/build/
+/tests/*/build/
+/examples/*/Cargo.lock
+/tests/*/Cargo.lock
+/rt0/*/Cargo.lock
+/crates/rust-xipfs-lib/Cargo.lock
+/sdk/*/build/
+/sdk/templates/*/build/
+**/target/
+.DS_Store
+*.swp

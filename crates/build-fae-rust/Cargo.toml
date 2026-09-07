@@ -1,0 +1,18 @@
+[package]
+name = "build-fae-rust"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "build_fae_rust"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1.0"
+fae_core = { path = "../fae-core" }
+fae_elf = { path = "../fae-elf" }
+generate-fae-rust-ld = { path = "../generate-fae-rust-ld" }

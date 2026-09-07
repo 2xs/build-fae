@@ -1,0 +1,11 @@
+[target.thumbv7em-none-eabi]
+linker = "arm-none-eabi-gcc"
+rustflags = [
+  "-C", "relocation-model=ropi-rwpi",
+  "-C", "panic=abort",
+  "-C", "link-arg=-T../../link.ld",
+  "-C", "link-arg=-nostartfiles",
+  "-C", "link-arg=-nostdlib",
+  "-C", "link-arg=-Wl,--gc-sections",
+  "-C", "link-arg=-lgcc",
+]

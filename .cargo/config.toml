@@ -1,0 +1,6 @@
+[alias]
+rustrt0-arm = "run -p xtask -- rustrt0-arm"
+rustrt0-thumb = "run -p xtask -- rustrt0-thumb"
+xipfs-rustrt0-thumb = "run -p xtask -- xipfs-rustrt0-thumb"
+build-xipfs-rustrt0-thumb  = "run --bin build_fae -- --startup-code target/thumbv7em-none-eabi/debug/xipfs-rustrt0-thumb --startup-alone"
+embedded-check = "run -p xtask -- embedded-check"

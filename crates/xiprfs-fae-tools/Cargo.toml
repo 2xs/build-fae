@@ -1,0 +1,38 @@
+[package]
+name = "xiprfs_fae_tools"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+publish.workspace = true
+
+[dependencies]
+anyhow = "1.0"
+goblin = "0.9"
+object = "0.37"
+tempfile = "3"
+fae_core = { path = "../fae-core" }
+fae_elf = { path = "../fae-elf" }
+build_gdbinit = { path = "../build-gdbinit" }
+fae_build = { path = "../fae-build" }
+fae_read = { path = "../fae-read" }
+
+[lib]
+path = "src/lib.rs"
+
+[[test]]
+name = "check_elf_rel"
+path = "../../tests/check_elf_rel.rs"
+
+[[test]]
+name = "cli_contract"
+path = "../../tests/cli_contract.rs"
+
+[[test]]
+name = "equivalence"
+path = "../../tests/equivalence.rs"
+
+[[test]]
+name = "rust_relocation_repros"
+path = "../../tests/rust_relocation_repros.rs"
